@@ -8,5 +8,4 @@ int main(int argc){
         pid_t proc = fork();
         sleep(5);
     }
-    
 }

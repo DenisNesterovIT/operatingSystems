@@ -18,18 +18,14 @@ int main() {
     int u[VECTOR_SIZE];
     int v[VECTOR_SIZE];
     FILE * file = fopen("temp.txt", "r+");
-    // Set random values to the vectors
     for (int i = 0; i < VECTOR_SIZE; i++) {
         u[i] = rand() % 100;
         v[i] = rand() % 100;
     }
-
     int n;
     printf("Enter the number of processes: ");
     scanf("%d", &n);
-
     int components_per_process = VECTOR_SIZE / n;
-
     for (int i = 0; i < n; i++) {
         pid_t pid = fork();
         if (pid == 0) {
@@ -57,6 +53,7 @@ int main() {
         fscanf(file,"%s[^\n]", line);
         result += atoi(line);
     }
+    fclose(file);
     printf("Dot product is: %d\n", result);
     return 0;
 }

@@ -1,0 +1,1 @@
+When n is 3 number of process is 7, when n is 5 number of processes is 31. This is because when цhen fork is called, it creates a new child process that is an exact copy of the parent process. Both the parent and child processes then continue execution from the point immediately after the fork call.
