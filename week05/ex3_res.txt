@@ -1,0 +1,5 @@
+When n is 10 000 000 and m is 1 execution time is 9,841s.
+When n is 10 000 000 and m is 2 execution time is 6,596s.
+When n is 10 000 000 and m is 4 execution time is 5,914s.
+When n is 10 000 000 and m is 10 execution time is 5,845s.
+When n is 10 000 000 and m is 100 execution time is 5,252s.

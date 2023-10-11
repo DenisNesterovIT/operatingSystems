@@ -1,0 +1,1 @@
+When the number of threads increases the execution time of the program decreases.
