@@ -1,0 +1,5 @@
+Throughput for first fit algorithm is - 0.029412.
+Throughput for best fit algorithm is - 0.000041.
+Throughput for worst fit algorithm is - 0.000040.
+Throughput of best fit and worst are approximately equal, because fo finding necessary memory block the should go through all memory.
+Throughput of first fit algorithm is the most, because time for allocarting is less, but for memory usage best fot algorithm is better.
