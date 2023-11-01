@@ -39,6 +39,7 @@ int main() {
     {
         passwordMemory[i] = password[i];
     }
+    printf("%s\n", password);
     while (1) {
         sleep(1); 
     }
