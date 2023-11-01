@@ -1,0 +1,1 @@
+si and so are swap in and swap out. They showed the number of pages that moved from disk to RAM every second. 
