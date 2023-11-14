@@ -31,11 +31,10 @@ void find_all_hlinks(const char *source) {
     dir = opendir(path);
     while ((entry = readdir(dir)) != NULL) {
         struct stat entry_stat;
-        char entry_path[PATH_MAX];
-        snprintf(entry_path, PATH_MAX, "%s/%s", ".", entry->d_name);
-        lstat(entry_path, &entry_stat);
+        char entryPath[PATH_MAX];
+        realpath(entry->d_name, entryPath);
         if (entry_stat.st_ino == st.st_ino && S_ISREG(entry_stat.st_mode)) {
-            printf("Inode: %lu, Path: %s", entry_stat.st_ino, entry_path);
+            printf("Inode: %lu, Path: %s", entry_stat.st_ino, entryPath);
         }
     }
     closedir(dir);
@@ -56,6 +55,7 @@ void unlink_all(const char *source) {
             unlink(entry_path);
         }
     }
+    printf("Last hard link is %s\n", source);
     closedir(dir);
 }
 
@@ -65,14 +65,14 @@ create_sym_link(const char* source, const char* link){
 
 int main(int argc, char *argv[]) {
     path = argv[1];
-    FILE *file = fopen("myfile1.txt", "w");
+    FILE *file = fopen(strcat(path,"myfile1.txt"), "w");
     fprintf(file, "Hello world.\n");
     fclose(file);
     link("myfile1.txt", "myfile11.txt");
     link("myfile1.txt", "myfile12.txt");
     find_all_hlinks("myfile1.txt");
     rename("myfile1.txt", "/tmp/myfile1.txt");
-    file = fopen("myfile11.txt", "a");
+    file = fopen(strcat(path,"myfile11.txt"), "a");
     fprintf(file, "Modified content.\n");
     fclose(file);
     create_sym_link("/tmp/myfile1.txt", "myfile13.txt");

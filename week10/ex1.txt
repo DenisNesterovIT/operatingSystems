@@ -1,0 +1,1 @@
+Since the inode is the same, when changing myfile11.txt monitor tracks these changes . However, when changing /tmp/myfile1.txt monitor does not track this because the inode is different.
