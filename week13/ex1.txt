@@ -1,0 +1,31 @@
+Thread 1 is created.
+
+Thread 2 is created.
+
+Thread 2 tries to lock the mutex 1.
+Thread 3 is created.
+
+Thread 0 is created.
+
+Thread 1 tries to lock the mutex 3.
+Thread 1 is created.
+Thread 3 tries to lock the mutex 1.
+
+Thread 1 tries to lock the mutex 0.
+Thread 2 is created.
+Thread 1 is created.
+1 
+Thread 2 tries to lock the mutex 0.
+Thread 3 is created.
+
+Thread 3 tries to lock the mutex 0.
+Thread 0 is created.
+
+Thread 0 tries to lock the mutex 0.
+0 
+Thread 1 tries to lock the mutex 0.
+Thread 0 tries to lock the mutex 0.
+Thread 2 unlocked mutex 1.
+Thread 1 unlocked mutex 0.
+
+Deadlock is a situation where there are exist some processes. Each process holds a resource and waits for another resource to be received by some other process. If cofman conditions occur simultaneously in a system it is a deadlock. But if one or more of the cofman conditions doesn't occur, it is not a deadlock.
